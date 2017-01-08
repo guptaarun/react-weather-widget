@@ -10,5 +10,5 @@
 Start the Webpack server (includes live reloading when you change files):
 
 ```sh
-  $ npm start
+  $ npm run dev
 ```
