@@ -1,0 +1,44 @@
+body {
+  background: #ECECEC;
+}
+
+#widget01__weather {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  font-family: Arial, Helvetica;
+  display: table;
+  margin: auto;
+  font-size: 12px;
+  ._city {
+    font-weight: normal;
+    font-size: 24px;
+    margin: 0 0 5px 0;
+  }
+  ._temprature {
+    font-size: 72px;
+    float: left;
+  }
+  ._weatherinfo{
+    float: left;
+    text-align: center;
+  }
+  ._weatherforecast {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+    clear: both;
+    li {
+      float: left;
+      text-align: center;
+      border-right: 1px dotted #CCC;
+      padding: 0 10px;
+      div{
+        font-weight: bold;
+      }
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+}
