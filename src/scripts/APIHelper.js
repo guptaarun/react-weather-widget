@@ -8,7 +8,7 @@ var helpers = {
       return response.json();
     })
     .then(function(json) {
-      console.log('parsed json', json);
+      //console.log('parsed json', json);
       return json
     })
     .catch(function(error) {

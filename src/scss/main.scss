@@ -7,7 +7,8 @@ body {
   padding: 25px;
   border-radius: 10px;
   font-family: Arial, Helvetica;
-  display: table;
+  width: 340px;
+  height: 160px;
   margin: auto;
   font-size: 12px;
   ._city {
@@ -26,8 +27,9 @@ body {
   ._weatherforecast {
     list-style-type: none;
     padding: 0;
-    margin: 20px 0 0 0;
+    margin: 10px 0 0 0;
     clear: both;
+    float: left;
     li {
       float: left;
       text-align: center;

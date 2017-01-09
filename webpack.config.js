@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var CompressionPlugin = require("compression-webpack-plugin");
+//var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   entry: './src/scripts/main.js',
@@ -38,12 +39,27 @@ module.exports = {
     new webpack.optimize.UglifyJsPlugin({
       include: /\.min\.js$/,
       compress: {
-        warnings: false
+        warnings: false,
+        drop_console: false
       },
       minimize: true,
-      comments: false
+      comments: false,
+      output: {comments: false}
     }),
-    new ExtractTextPlugin('assets/styles.css')
+    new webpack.optimize.DedupePlugin(),
+    new webpack.DefinePlugin({
+        'process.env': {
+            'NODE_ENV': JSON.stringify('production')
+        }
+    }),
+    new CompressionPlugin({
+      asset: "[path].gz[query]",
+      algorithm: "gzip",
+      test: /\.js$|\.css$|\.html$/,
+      threshold: 10240,
+      minRatio: 0
+    })
+    //new ExtractTextPlugin('assets/styles.css')
   ],
   resolve: {
     extensions: ['', '.js', '.scss', '.json']
